@@ -1,0 +1,28 @@
+● What is Emmet?
+ - Emeet allows you to type the shortcuts which later gets expanded to full piece of code.
+ - It is useful for developers, as they save time and keystore.
+ - No extension is required for VS CODE
+
+ eg-  ul>li*3>a> is expanded as below
+ <ul>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+    <li><a href=""></a></li>
+  </ul>
+ 
+
+  
+● Difference between a Library and Framework?
+
+
+● What is CDN? Why do we use it?
+
+● Why is React known as React?
+
+● What is crossorigin in script tag?
+
+● What is diference between React and ReactDOM
+
+● What is difference between react.development.js and react.production.js files via CDN?
+
+● What is async and defer?
