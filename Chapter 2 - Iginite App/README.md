@@ -1,1 +1,9 @@
-
+- intialize `npm` into your repo
+- install parcel as dev dependency
+- install `react` and `react-dom`
+- remove CDN links of react
+- ignite your app with parcel (npx parcel index.html)
+- add scripts for “start” and “build” with parcel commands
+- add `.gitignore` file
+- add `browserlists`
+- build a production version of your code using `parcel build`
