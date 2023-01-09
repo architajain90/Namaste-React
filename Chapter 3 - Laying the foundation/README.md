@@ -1,0 +1,14 @@
+- Add npm plugin - babel-plugin-transform-remove-console (To remove console.logs)
+- create .babelrc to configure above package
+- Add keys in createElement prop - to remove Warning: Each child in a list should have a unique "key" prop. (React key reconsilation)
+- React.createElement -> object -> HTML (DOM)
+- JSX -> (done by Babel) React.createElement -> object -> (dobe by react dom- render function) HTML (DOM)
+- Update HTML using Javascript - Philosophy behined React. But createElement will be messy and less readable if we have multiple nested elements. That's where JSX come into picture.- - It's developed by facebook developer. JSX empowers the react.
+- What is JSX? JSX stands for JavaScript XML. JSX allows us to write HTML **LIKE SYNTAX in React. JSX makes it easier to write and add HTML **LIKE SYNTAX in React.
+- If JSX takes multiple line - wrap it in paranthesis ().
+- Browser console will not understand JSX directly. But Babel does & convert this into createElement
+- Diff b/w JSX & HTML
+  -JSX Advantage - Readibility, less code, maintainibilty, developer friendly
+- 2 package-lock.json in project. First in at root level and second is in node_modules to manage the transitive dependencies
+- XSS sanitization in react - https://www.stackhawk.com/blog/react-xss-guide-examples-and-prevention/
+- Component composition - Using a component inside another component
