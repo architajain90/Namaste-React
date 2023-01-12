@@ -1,18 +1,16 @@
-const RESTAURANT_LIST = {
-  name: "Burger king",
-  cuisines: ["Burger", "American"],
-  rating: "4.2",
-  image:
-    "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-};
+import { RESTAURANT_LIST } from "../constants";
 
-const RestaurantCard = () => {
+//Not sure why this url is not working in constant.js - TODO
+const IMG_CDN_URL =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+
+const RestaurantCard = ({ name, cloudinaryImageId, cuisines, avgRating }) => {
   return (
     <div className="restaurant-card">
-      <img src={RESTAURANT_LIST.image}></img>
-      <h2>{RESTAURANT_LIST.name}</h2>
-      <h3>{RESTAURANT_LIST.cuisines.join(", ")}</h3>
-      <h4>{RESTAURANT_LIST.rating} stars</h4>
+      <img src={IMG_CDN_URL + cloudinaryImageId}></img>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h4>{avgRating} stars </h4>
     </div>
   );
 };
@@ -20,18 +18,9 @@ const RestaurantCard = () => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      {RESTAURANT_LIST.map((restaurant) => {
+        return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
+      })}
     </div>
   );
 };
