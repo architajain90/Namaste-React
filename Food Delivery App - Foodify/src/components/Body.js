@@ -15,14 +15,18 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
 
   getRestaurants = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log(json);
-    // Optional Chaining
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json = await data.json();
+      console.log(json);
+      // Optional Chaining
+      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+      setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    } catch (e) {
+      console.log("Use correct path to fetch the data");
+    }
   };
 
   useEffect(() => {
