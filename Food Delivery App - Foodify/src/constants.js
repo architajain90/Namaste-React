@@ -1,6 +1,9 @@
 export const LOGO_URL =
   "https://foodify.org.in/public/assets/landing/image/2022-12-30-63adebc62f9fe.png";
 
+export const IMG_CDN_URL =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+
 export const RESTAURANT_LIST = [
   {
     type: "restaurant",
