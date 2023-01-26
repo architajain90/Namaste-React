@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useIsOnline from "../utils/useIsOnline";
 
 const Title = () => {
   return (
@@ -12,6 +13,7 @@ const Title = () => {
 
 const Header = () => {
   const [isLoggedin, setIsLoggedIn] = useState(false);
+  const isOnline = useIsOnline();
 
   return (
     <div className="header">
@@ -28,6 +30,7 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>Cart</li>
+          <li>{isOnline ? "✅" : "🔴"}</li>
         </ul>
         {isLoggedin ? (
           <button onClick={() => setIsLoggedIn(false)}>Logout</button>
