@@ -2,6 +2,7 @@ import { LOGO_URL } from "../constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useIsOnline from "../utils/useIsOnline";
+import { useSelector } from "react-redux";
 
 const Title = () => {
   return (
@@ -14,6 +15,7 @@ const Title = () => {
 const Header = () => {
   const [isLoggedin, setIsLoggedIn] = useState(false);
   const isOnline = useIsOnline();
+  const cartItem = useSelector((store) => store.cart.items);
 
   return (
     <div className="header">
@@ -29,7 +31,9 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
-          <li>Cart</li>
+          <li>
+            <Link to="/cart"> Cart - {cartItem.length} items </Link>
+          </li>
           <li>{isOnline ? "✅" : "🔴"}</li>
         </ul>
         {isLoggedin ? (
